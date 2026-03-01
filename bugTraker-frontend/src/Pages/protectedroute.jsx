@@ -6,7 +6,7 @@ function Protectedroute({ islogin, authfrontend }) {
     if (islogin === "") {
       authfrontend();
     }
-  }, []);
+  }, [islogin]);
 
   if (islogin === "") return null;
   if (islogin === null) {
