@@ -55,6 +55,7 @@ function Login({ userauthlogin, setUser, user }) {
         setUser(loginuser);
       }
     } catch (error) {
+      console.error("Login error:", error);
       seterror({ general: "Something went wrong. Try again." });
     } finally {
       setloading(false);
