@@ -1,6 +1,6 @@
 function Getdata(){
   
-  return fetch("https://bugspedia.onrender.com/api/bug")
+  return fetch(`${import.meta.env.VITE_API_URL}/api/bug`)
   
   
   

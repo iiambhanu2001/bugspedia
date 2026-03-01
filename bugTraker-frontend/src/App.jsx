@@ -40,7 +40,7 @@ function App() {
   async function authfrontend() {
     try {
       const res = await fetch(
-        "https://bugspedia.onrender.com/api/user/protected",
+        `${import.meta.env.VITE_API_URL}/api/user/protected`,
         {
           method: "GET",
           credentials: "include",
@@ -68,7 +68,7 @@ function App() {
   }, [user]);
 
   async function addbugs(newbug) {
-    const res = await fetch("https://bugspedia.onrender.com/api/bug/", {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/api/bug/`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -83,7 +83,7 @@ function App() {
     await fetchbugs();
   }
   async function removeBugs(id) {
-    const res = await fetch(`https://bugspedia.onrender.com/api/bug/${id}`, {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/api/bug/${id}`, {
       method: "DELETE",
       headers: {
         "content-type": "application/json",
@@ -97,7 +97,7 @@ function App() {
   }
   async function removesol(id, solid) {
     const res = await fetch(
-      `https://bugspedia.onrender.com/api/bug/${id}/sol/${solid}/`,
+      `${import.meta.env.VITE_API_URL}/api/bug/${id}/sol/${solid}/`,
       {
         method: "DELETE",
         headers: {
@@ -113,7 +113,7 @@ function App() {
   }
 
   async function editbugs(updatedbug, id) {
-    const res = await fetch(`https://bugspedia.onrender.com/api/bug/${id}`, {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/api/bug/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -129,7 +129,7 @@ function App() {
   async function userauth(userdata) {
     try {
       const res = await fetch(
-        "https://bugspedia.onrender.com/api/user/register",
+        `${import.meta.env.VITE_API_URL}/api/user/register`,
         {
           method: "POST",
           headers: {
@@ -152,7 +152,7 @@ function App() {
 
   async function userauthlogin(userdata) {
     try {
-      const res = await fetch("https://bugspedia.onrender.com/api/user/login", {
+      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/user/login`, {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -173,7 +173,7 @@ function App() {
   async function logout() {
     try {
       const res = await fetch(
-        "https://bugspedia.onrender.com/api/user/logout",
+        `${import.meta.env.VITE_API_URL}/api/user/logout`,
         {
           method: "GET",
 
