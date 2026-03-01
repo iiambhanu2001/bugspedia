@@ -1,0 +1,38 @@
+.solution-timeline {
+  position: relative;
+  padding-left: 20px;
+  margin-top: 1rem;
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 1.5rem;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 12px;
+  height: 12px;
+  background-color: #2563eb; /* blue marker */
+  border-radius: 50%;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 5px; /* center under the marker */
+  top: 1.2rem; /* start below the marker */
+  width: 2px;
+  height: calc(100% - 1.2rem);
+  background-color: #cbd5e1; /* gray vertical line */
+}
+
+.timeline-item:last-child::before {
+  display: none; /* remove line under last item */
+}
+
+.timeline-content {
+  margin-left: 20px;
+}
