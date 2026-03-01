@@ -2,7 +2,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Statuscolor from "../components/statuscolor";
 import { useEffect, useState } from "react";
 
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
   Select,
