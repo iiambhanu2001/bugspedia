@@ -60,7 +60,11 @@ export const loginusers =async(req,res)=>{
     };
    
     const token = jwt.sign(payload, process.env.secretey);
-    res.cookie("item", token);
+    res.cookie("item", token,{
+      httpOnly: true,
+      secure:true,
+      sameSite:"none" 
+    });
 
     return res.status(200).json({
       message: "Successfully logged in",
