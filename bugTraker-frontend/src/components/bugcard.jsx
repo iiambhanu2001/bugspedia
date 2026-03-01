@@ -6,12 +6,6 @@ import { Badge } from "@/components/ui/badge";
 function BugCard({ bug, removeBugs, onedit, onview }) {
   const navigate = useNavigate();
 
-  const bgColor = {
-    high: "bg-red-100 text-red-700 border-red-200",
-    mid: "bg-yellow-100 text-yellow-700 border-yellow-200",
-    low: "bg-green-100 text-green-700 border-green-200",
-  };
-
   return (
     
     <div
@@ -46,7 +40,7 @@ function BugCard({ bug, removeBugs, onedit, onview }) {
 
         onClick={(e) => e.stopPropagation()}
       >
-        <Button size="sm" variant="secondary" onClick={(e) => onedit(bug._id)}>
+        <Button size="sm" variant="secondary" onClick={() => onedit(bug._id)}>
           Edit
         </Button>
 
@@ -56,7 +50,7 @@ function BugCard({ bug, removeBugs, onedit, onview }) {
         <Button
           size="sm"
           variant="destructive"
-          onClick={(e) => removeBugs(bug._id)}
+          onClick={() => removeBugs(bug._id)}
         >
           remove if finished
         </Button>

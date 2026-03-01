@@ -39,10 +39,13 @@ function App() {
 
   async function authfrontend() {
     try {
-      const res = await fetch("https://bugspedia.onrender.com/api/user/protected", {
-        method: "GET",
-        credentials: "include",
-      });
+      const res = await fetch(
+        "https://bugspedia.onrender.com/api/user/protected",
+        {
+          method: "GET",
+          credentials: "include",
+        },
+      );
 
       if (!res.ok) {
         setUser(null);
@@ -55,13 +58,14 @@ function App() {
       } else setUser(data);
     } catch (error) {
       setUser(null);
+      console.error("Error during frontend authentication:", error);
     }
   }
   useEffect(() => {
     if (user) {
       authfrontend();
     }
-  }, []);
+  }, [user]);
 
   async function addbugs(newbug) {
     const res = await fetch("https://bugspedia.onrender.com/api/bug/", {
@@ -124,13 +128,16 @@ function App() {
   }
   async function userauth(userdata) {
     try {
-      const res = await fetch("https://bugspedia.onrender.com/api/user/register", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
+      const res = await fetch(
+        "https://bugspedia.onrender.com/api/user/register",
+        {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(userdata),
         },
-        body: JSON.stringify(userdata),
-      });
+      );
       const data = await res.json();
 
       if (!res.ok) {
@@ -138,7 +145,7 @@ function App() {
       }
       return data;
     } catch (error) {
-  
+      console.error("Error during user registration:", error);
       return null;
     }
   }
@@ -159,17 +166,20 @@ function App() {
       }
       return data;
     } catch (error) {
-    
+      console.error("Error during user login:", error);
       return null;
     }
   }
   async function logout() {
     try {
-      const res = await fetch("https://bugspedia.onrender.com/api/user/logout", {
-        method: "GET",
+      const res = await fetch(
+        "https://bugspedia.onrender.com/api/user/logout",
+        {
+          method: "GET",
 
-        credentials: "include",
-      });
+          credentials: "include",
+        },
+      );
       await res.json();
       if (res.ok) {
         setUser(null);
@@ -177,6 +187,7 @@ function App() {
         toast.error("Logout failed. Please try again.");
       }
     } catch (error) {
+      console.error("Error during logout:", error);
       toast.error("Logout failed. Please try again.");
 
       setUser(null);
