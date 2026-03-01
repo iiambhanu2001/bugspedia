@@ -2,7 +2,7 @@ import "./App.css";
 
 import Bugs from "./Pages/buglist";
 import Bug from "./Pages/bugdetails";
-import Dashboard from "./Pages/dashboard";
+import Dashboard from "./Pages/Dashboard";
 import Layout from "./layout/Layout";
 
 import Login from "./Pages/login";
