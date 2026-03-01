@@ -1,6 +1,6 @@
 function Getdata(){
   
-  return fetch("http://localhost:3000/api/bug")
+  return fetch("https://bugspedia.onrender.com/api/bug")
   
   
   

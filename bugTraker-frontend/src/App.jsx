@@ -39,7 +39,7 @@ function App() {
 
   async function authfrontend() {
     try {
-      const res = await fetch("http://localhost:3000/api/user/protected", {
+      const res = await fetch("https://bugspedia.onrender.com/api/user/protected", {
         method: "GET",
         credentials: "include",
       });
@@ -64,7 +64,7 @@ function App() {
   }, []);
 
   async function addbugs(newbug) {
-    const res = await fetch("http://localhost:3000/api/bug/", {
+    const res = await fetch("https://bugspedia.onrender.com/api/bug/", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -79,7 +79,7 @@ function App() {
     await fetchbugs();
   }
   async function removeBugs(id) {
-    const res = await fetch(`http://localhost:3000/api/bug/${id}`, {
+    const res = await fetch(`https://bugspedia.onrender.com/api/bug/${id}`, {
       method: "DELETE",
       headers: {
         "content-type": "application/json",
@@ -93,7 +93,7 @@ function App() {
   }
   async function removesol(id, solid) {
     const res = await fetch(
-      `http://localhost:3000/api/bug/${id}/sol/${solid}/`,
+      `https://bugspedia.onrender.com/api/bug/${id}/sol/${solid}/`,
       {
         method: "DELETE",
         headers: {
@@ -109,7 +109,7 @@ function App() {
   }
 
   async function editbugs(updatedbug, id) {
-    const res = await fetch(`http://localhost:3000/api/bug/${id}`, {
+    const res = await fetch(`https://bugspedia.onrender.com/api/bug/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -124,7 +124,7 @@ function App() {
   }
   async function userauth(userdata) {
     try {
-      const res = await fetch("http://localhost:3000/api/user/register", {
+      const res = await fetch("https://bugspedia.onrender.com/api/user/register", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -145,7 +145,7 @@ function App() {
 
   async function userauthlogin(userdata) {
     try {
-      const res = await fetch("http://localhost:3000/api/user/login", {
+      const res = await fetch("https://bugspedia.onrender.com/api/user/login", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -165,7 +165,7 @@ function App() {
   }
   async function logout() {
     try {
-      const res = await fetch("http://localhost:3000/api/user/logout", {
+      const res = await fetch("https://bugspedia.onrender.com/api/user/logout", {
         method: "GET",
 
         credentials: "include",
