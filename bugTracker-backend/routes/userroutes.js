@@ -5,11 +5,11 @@ import authmid from "../auth/middelware.js"
 const userrouter=express.Router();
 
 userrouter.get("/",getusers)
-userrouter.get("/logout",logoutusers)
+
 userrouter.post("/register",registerusers)
 userrouter.post("/login",loginusers)
 userrouter.get("/protected",authmid,protectedroute)
-
+userrouter.post("/logout",logoutusers)
 
 
 export default userrouter;

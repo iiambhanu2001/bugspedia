@@ -76,7 +76,11 @@ export const loginusers =async(req,res)=>{
 
 
 export const logoutusers=async(req,res)=>{
-  const data = res.clearCookie("item");
+  const data = res.clearCookie("item",{
+    httpOnly: true,
+    secure:true,
+    sameSite:"none" 
+  });
   res.json({ message: "success" });
 }
 
