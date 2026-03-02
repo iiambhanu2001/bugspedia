@@ -6,9 +6,9 @@ function Protectedroute({ islogin, authfrontend }) {
     if (islogin === undefined) {
       authfrontend();
     }
-  }, [islogin]);
+  }, [islogin,authfrontend]);
 
-  if (islogin === "") return null;
+  if (islogin === undefined) return null;
   if (islogin === null) {
  
     return <Navigate to="/login" replace />;

@@ -231,7 +231,7 @@ function App() {
             element={
               <Protectedroute
                 islogin={user}
-                setislogin={setUser}
+         
                 authfrontend={authfrontend}
               />
             }
