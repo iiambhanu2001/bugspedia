@@ -66,7 +66,7 @@ function App() {
     if (user) {
       authfrontend();
     }
-  }, [user]);
+  }, []);
 
   async function addbugs(newbug) {
     const res = await fetch(`${import.meta.env.VITE_API_URL}/api/bug/`, {
