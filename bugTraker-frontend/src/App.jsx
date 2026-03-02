@@ -179,7 +179,7 @@ function App() {
       const res = await fetch(
         `${import.meta.env.VITE_API_URL}/api/user/logout`,
         {
-          method: "GET",
+          method: "POST",
 
           credentials: "include",
         },
@@ -188,7 +188,7 @@ function App() {
       if (res.ok) {
         setUser(null);
       } else {
-        toast.error("Logout failed. Please try again.");
+       throw new Error("Logout failed");  
       }
     } catch (error) {
       console.error("Error during logout:", error);
