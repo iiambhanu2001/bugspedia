@@ -180,7 +180,9 @@ function App() {
         `${import.meta.env.VITE_API_URL}/api/user/logout`,
         {
           method: "POST",
-
+          headers: {
+            "content-type": "application/json",
+          },
           credentials: "include",
         },
       );
@@ -188,7 +190,7 @@ function App() {
       if (res.ok) {
         setUser(null);
       } else {
-       throw new Error("Logout failed");  
+        throw new Error("Logout failed");
       }
     } catch (error) {
       console.error("Error during logout:", error);
@@ -229,11 +231,7 @@ function App() {
         <Route element={<Layout islogin={user} />}>
           <Route
             element={
-              <Protectedroute
-                islogin={user}
-         
-                authfrontend={authfrontend}
-              />
+              <Protectedroute islogin={user} authfrontend={authfrontend} />
             }
           >
             <Route
