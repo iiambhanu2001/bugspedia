@@ -56,6 +56,7 @@ function App() {
       if (!data.id) {
         setUser(null);
       } else setUser(data);
+      return data;
     } catch (error) {
       setUser(null);
       console.error("Error during frontend authentication:", error);
@@ -152,14 +153,17 @@ function App() {
 
   async function userauthlogin(userdata) {
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/user/login`, {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
+      const res = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/user/login`,
+        {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          credentials: "include",
+          body: JSON.stringify(userdata),
         },
-        credentials: "include",
-        body: JSON.stringify(userdata),
-      });
+      );
       const data = await res.json();
       if (!res.ok) {
         throw new Error(data.message || "Login failed");
