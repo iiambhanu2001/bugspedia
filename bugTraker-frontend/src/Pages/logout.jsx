@@ -15,7 +15,7 @@ function Logout({ logout, setUser }) {
       }
     };
     dologout();
-  }, [logout, navigate, setUser]);
+  }, [logout, setUser]);
 
   return (
     <div>
