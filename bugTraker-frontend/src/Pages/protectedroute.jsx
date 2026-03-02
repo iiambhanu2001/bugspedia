@@ -3,7 +3,7 @@ import { Outlet, Navigate } from "react-router-dom";
 
 function Protectedroute({ islogin, authfrontend }) {
   useEffect(() => {
-    if (islogin === "") {
+    if (islogin === undefined) {
       authfrontend();
     }
   }, [islogin]);

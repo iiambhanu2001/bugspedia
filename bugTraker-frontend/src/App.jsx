@@ -19,7 +19,7 @@ import toast, { Toaster } from "react-hot-toast";
 import NotFound from "./Pages/notFound";
 function App() {
   const [inputdata, setinputdata] = useState([]);
-  const [user, setUser] = useState("");
+  const [user, setUser] = useState(undefined);
 
   async function fetchbugs() {
     const res = await Getdata();
